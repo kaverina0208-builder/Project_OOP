@@ -1,3 +1,4 @@
+from src.category import Category
 from tests.conftest import product
 
 
@@ -15,3 +16,6 @@ def test_category_init(first_cat, second_cat):
 
     assert first_cat.product_count == 5
     assert second_cat.product_count == 5
+
+    assert Category.category_count == 2
+    assert Category.product_count == 5

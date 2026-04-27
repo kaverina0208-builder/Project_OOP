@@ -10,21 +10,23 @@ class Product:
         self.__price = price
         self.quantity = quantity
 
-
     @classmethod
     def new_product(cls, prod_dict):
         name, description, price, quantity = tuple([value for value in prod_dict.values()])
-        return  cls(name, description, price, quantity)
-
+        return cls(name, description, price, quantity)
 
     @property
     def price(self):
         return self.__price
 
-
     @price.setter
     def price(self, new_price: float):
         if new_price <= 0:
-            print('Цена не должна быть нулевая или отрицательная')
+            print("Цена не должна быть нулевая или отрицательная")
             return
-        self.__price = new_price
+        elif new_price < self.__price:
+            answer = input('Вы действительно хотите снизить цену? Введите "y", если подтверждаете__')
+            if answer == "y":
+                self.__price = new_price
+        else:
+            self.__price = new_price

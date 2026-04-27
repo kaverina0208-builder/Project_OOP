@@ -20,12 +20,13 @@ def test_category_init(first_cat, second_cat):
     assert Category.category_count == 2
     assert Category.product_count == 5
 
+
 def test_category_product_property(first_cat):
-    assert  first_cat.products == ('Sony, 123.0 руб. Остаток: 2 шт.\nPhillips, 156.0 руб. Остаток: 1 шт.\n')
+    assert first_cat.products == ("Sony, 123.0 руб. Остаток: 2 шт.\nPhillips, 156.0 руб. Остаток: 1 шт.\n")
 
 
 def test_category_add_product(first_cat):
     assert len(first_cat.products_list) == 2
-    cat = Product("55\" QLED 4K", "Фоновая подсветка", 123000.0, 7)
+    cat = Product('55" QLED 4K', "Фоновая подсветка", 123000.0, 7)
     first_cat.add_product(cat)
     assert len(first_cat.products_list) == 3

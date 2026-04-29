@@ -28,3 +28,8 @@ def second_cat():
 @pytest.fixture
 def product():
     return Product("JVC", "HG-13", 256.0, 1)
+
+
+@pytest.fixture
+def product2():
+    return Product("JVC", "HG-13", 100.0, 3)

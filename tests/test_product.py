@@ -32,7 +32,7 @@ def test_price_setter(capsys, product):
 
 
 def test_product_str(product):
-    assert str(product ) == 'JVC, 256.0 руб. Остаток: 1 шт.'
+    assert str(product) == "JVC, 256.0 руб. Остаток: 1 шт."
 
 
 def test_product_add(product, product2):

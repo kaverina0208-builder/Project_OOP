@@ -1,5 +1,3 @@
-from itertools import product
-
 from src.product import Product
 
 
@@ -17,13 +15,11 @@ class Category:
         Category.category_count += 1
         Category.product_count += len(products) if products else 0
 
-
     def __str__(self):
         sum = 0
         for product in self.__products:
             sum += product.quantity
-        return f'{self.name} , количество продуктов: {sum} шт.'
-
+        return f"{self.name}, количество продуктов: {sum}шт."
 
     def add_product(self, product_new: Product):
         self.__products.append(product_new)

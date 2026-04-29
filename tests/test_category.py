@@ -33,4 +33,4 @@ def test_category_add_product(first_cat):
 
 
 def test_category_str(first_cat):
-    assert str(first_cat) == f'televisions , количество продуктов: 3 шт.'
+    assert str(first_cat) == f'televisions, количество продуктов: 3шт.'

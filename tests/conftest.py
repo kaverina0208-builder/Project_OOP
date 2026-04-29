@@ -3,7 +3,6 @@ from src.product import Product
 from src.category import Category
 
 
-
 @pytest.fixture
 def first_cat():
     return Category(
@@ -30,7 +29,7 @@ def second_cat():
 def product():
     return Product("JVC", "HG-13", 256.0, 1)
 
+
 @pytest.fixture
 def product2():
     return Product("JVC", "HG-13", 100.0, 3)
-

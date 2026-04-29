@@ -30,3 +30,7 @@ def test_category_add_product(first_cat):
     cat = Product('55" QLED 4K', "Фоновая подсветка", 123000.0, 7)
     first_cat.add_product(cat)
     assert len(first_cat.products_list) == 3
+
+
+def test_category_str(first_cat):
+    assert str(first_cat) == f'televisions , количество продуктов: 3 шт.'

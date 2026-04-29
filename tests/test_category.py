@@ -2,7 +2,6 @@ import pytest
 
 from src.category import Category
 from src.product import Product
-from src.smartphone import Smartphone
 
 
 def test_category_init(first_cat, second_cat):
@@ -36,7 +35,7 @@ def test_category_add_product(first_cat):
 
 
 def test_category_str(first_cat):
-    assert str(first_cat) == f'televisions, количество продуктов: 3шт.'
+    assert str(first_cat) == f"televisions, количество продуктов: 3шт."
 
 
 def test_category_add_product_error(first_cat):

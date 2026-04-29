@@ -1,5 +1,8 @@
+import pytest
+
 from src.category import Category
 from src.product import Product
+from src.smartphone import Smartphone
 
 
 def test_category_init(first_cat, second_cat):
@@ -34,3 +37,19 @@ def test_category_add_product(first_cat):
 
 def test_category_str(first_cat):
     assert str(first_cat) == f'televisions, количество продуктов: 3шт.'
+
+
+def test_category_add_product_error(first_cat):
+    with pytest.raises(TypeError):
+        cat = 1
+        first_cat.add_product(cat)
+
+
+def test_category_add_product_smart(first_cat, smartphone1):
+    first_cat.add_product(smartphone1)
+    assert len(first_cat.products_list) == 3
+
+
+def test_category_add_product_lawn(first_cat, lawngrass1):
+    first_cat.add_product(lawngrass1)
+    assert len(first_cat.products_list) == 3

@@ -7,11 +7,26 @@ class Product:
     def __init__(self, name, description, price, quantity):
         self.name = name
         self.description = description
-        self.price = price
+        self.__price = price
         self.quantity = quantity
 
+    @classmethod
+    def new_product(cls, prod_dict):
+        name, description, price, quantity = tuple([value for value in prod_dict.values()])
+        return cls(name, description, price, quantity)
 
-# if __name__ == '__main__':
-#     prod1 = Product('Sony', 'rt-123', 123.0, 2)
-#     prod2 = Product('Phillips', 'yu-123', 156.0, 1)
-#     prod3 = Product('JVC', 'KL-123', 563.0, 8)
+    @property
+    def price(self):
+        return self.__price
+
+    @price.setter
+    def price(self, new_price: float):
+        if new_price <= 0:
+            print("Цена не должна быть нулевая или отрицательная")
+            return
+        elif new_price < self.__price:
+            answer = input('Вы действительно хотите снизить цену? Введите "y", если подтверждаете__')
+            if answer == "y":
+                self.__price = new_price
+        else:
+            self.__price = new_price

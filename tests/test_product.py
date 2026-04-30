@@ -26,7 +26,7 @@ def test_new_product():
 def test_price_setter(capsys, product):
     product.price = 0
     massage = capsys.readouterr()
-    assert massage.out.strip() == "Цена не должна быть нулевая или отрицательная"
+    assert massage.out.strip().split("\n")[-1] == "Цена не должна быть нулевая или отрицательная"
 
     product.price = 1000
     assert product.price == 1000

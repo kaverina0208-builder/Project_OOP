@@ -24,7 +24,7 @@ def test_category_init(first_cat, second_cat):
 
 
 def test_category_product_property(first_cat):
-    assert first_cat.products == ("Sony, 123.0 руб. Остаток: 2 шт.\nPhillips, 156.0 руб. Остаток: 1 шт.\n")
+    assert first_cat.products == ("Sony, 100.0 руб. Остаток: 2 шт.\nPhillips, 200.0 руб. Остаток: 1 шт.\n")
 
 
 def test_category_add_product(first_cat):
@@ -52,3 +52,8 @@ def test_category_add_product_smart(first_cat, smartphone1):
 def test_category_add_product_lawn(first_cat, lawngrass1):
     first_cat.add_product(lawngrass1)
     assert len(first_cat.products_list) == 3
+
+
+def test_middle_price(first_cat, category_empty_product):
+    assert category_empty_product.middle_price() == 0
+    assert first_cat.middle_price() == 150

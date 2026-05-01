@@ -11,7 +11,7 @@ def first_cat():
     return Category(
         name="televisions",
         description="3D",
-        products=[Product("Sony", "rt-123", 123.0, 2), Product("Phillips", "yu-123", 156.0, 1)],
+        products=[Product("Sony", "rt-123", 100.0, 2), Product("Phillips", "yu-123", 200.0, 1)],
     )
 
 
@@ -63,3 +63,10 @@ def lawngrass1():
 @pytest.fixture
 def lawngrass2():
     return LawnGrass("Газонная трава 2", "Выносливая трава", 450.0, 15, "США", "5 дней", "Темно-зеленый")
+
+
+@pytest.fixture
+def category_empty_product():
+    return Category(
+        name="processor",
+        description="AD-2", products=[])

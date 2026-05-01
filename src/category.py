@@ -1,3 +1,5 @@
+from itertools import product
+
 from src.product import Product
 
 
@@ -38,3 +40,10 @@ class Category:
     @property
     def products_list(self):
         return self.__products
+
+
+    def middle_price(self):
+        try:
+            return round(sum([product.price for product in self.products_list]) / len(self.products_list))
+        except ZeroDivisionError:
+            return 0

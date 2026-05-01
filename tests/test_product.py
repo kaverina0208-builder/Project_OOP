@@ -49,3 +49,8 @@ def test_iterator(product_iterator):
 
     with pytest.raises(StopIteration):
         next(product_iterator)
+
+
+def test_product_init_zero():
+    with pytest.raises(ValueError) as e:
+        prod_zero = Product("JVC", "HG-13", 100.0, 0)

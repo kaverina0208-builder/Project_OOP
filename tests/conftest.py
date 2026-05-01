@@ -67,6 +67,4 @@ def lawngrass2():
 
 @pytest.fixture
 def category_empty_product():
-    return Category(
-        name="processor",
-        description="AD-2", products=[])
+    return Category(name="processor", description="AD-2", products=[])

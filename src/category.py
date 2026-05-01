@@ -1,5 +1,3 @@
-from itertools import product
-
 from src.product import Product
 
 
@@ -40,7 +38,6 @@ class Category:
     @property
     def products_list(self):
         return self.__products
-
 
     def middle_price(self):
         try:

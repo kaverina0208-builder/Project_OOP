@@ -1,5 +1,4 @@
 import pytest
-from unicodedata import category
 
 from src.category import Category
 from src.product import Product
@@ -58,4 +57,3 @@ def test_category_add_product_lawn(first_cat, lawngrass1):
 def test_middle_price(first_cat, category_empty_product):
     assert category_empty_product.middle_price() == 0
     assert first_cat.middle_price() == 150
-
